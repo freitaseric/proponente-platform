@@ -1,0 +1,24 @@
+$kind: http-request
+name: Sign Up
+description: Create a User and the User data must be send via the request body in a HTTP POST method. Any other input, which is not an attribute of User will not be stored in the database.
+url: http://localhost:3000/auth/sign-up/email
+method: POST
+headers:
+  Content-Type: application/json
+  Origin: http://localhost:8080
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"John Doe\",\r
+
+    \    \"email\": \"john.doe@example.com\",\r
+
+    \    \"password\": \"password1234\",\r
+
+    \    \"image\": \"https://example.com/image.png\",\r
+
+    \    \"callbackURL\": \"http://localhost:3000/callback\"\r
+
+    }"
+order: 1000

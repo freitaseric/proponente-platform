@@ -1,0 +1,2 @@
+$kind: collection
+description: This restful api encompasses creating,modifying ,retrieving and deleting of users from a database. The user can sign up and at login the user will recieve a session ID. When a user fires the logout request, the session data will be deleted from the database. At Each Login a new Session will be generated and as soon as you are logged out all the user related endpoints will be blocked from user methods
