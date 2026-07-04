@@ -1,6 +1,7 @@
 import { drizzleAdapter } from '@better-auth/drizzle-adapter';
+import type { AuthSession } from '@captaflow/contracts/auth';
 import { betterAuth } from 'better-auth/minimal';
-import { openAPI } from 'better-auth/plugins';
+import { oneTimeToken, openAPI } from 'better-auth/plugins';
 import { db } from '../db/client.js';
 import schema from '../db/schema/index.js';
 import { env } from './env.js';
@@ -16,7 +17,13 @@ export const auth = betterAuth({
 			clientSecret: env.GOOGLE_CLIENT_SECRET,
 		},
 	},
-	plugins: [openAPI({ disableDefaultReference: true })],
+	plugins: [
+		oneTimeToken({
+			expiresIn: 3,
+			storeToken: 'hashed',
+		}),
+		openAPI({ disableDefaultReference: true }),
+	],
 	database: drizzleAdapter(db, {
 		provider: 'pg',
 		transaction: true,
@@ -26,11 +33,12 @@ export const auth = betterAuth({
 	appName: 'Captaflow',
 	logger: console,
 	trustedOrigins: [
+		env.WEB_PUBLIC_URL,
+		env.API_PUBLIC_URL,
 		...env.CORS_ALLOWED_ORIGINS.split(',')
 			.map(origin => origin.trim())
 			.filter(Boolean),
-		'http://localhost:3000',
 	],
 });
 
-export type Session = typeof auth.$Infer.Session;
+export type Session = AuthSession;

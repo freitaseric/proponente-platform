@@ -1,34 +1,52 @@
+import type { AuthSession } from '@captaflow/contracts/auth';
 import { fromNodeHeaders } from 'better-auth/node';
 import type { FastifyPluginAsync } from 'fastify';
+import { z } from 'zod';
 import { auth } from '../../shared/auth.js';
+import { env } from '../../shared/env.js';
 
 const authRoutes: FastifyPluginAsync = async fastify => {
+	fastify.get(
+		'/auth/callback/desktop',
+		{
+			schema: {
+				hide: true,
+			},
+		},
+		async (request, reply) => {
+			const requestUrl = new URL(request.url, env.API_PUBLIC_URL);
+			const state = requestUrl.searchParams.get('state');
+			const { token } = await auth.api.generateOneTimeToken({
+				headers: fromNodeHeaders(request.headers),
+			});
+			const redirectUrl = new URL(`/sucesso`, env.WEB_PUBLIC_URL);
+
+			redirectUrl.searchParams.set('token', token);
+
+			if (state) {
+				redirectUrl.searchParams.set('state', state);
+			}
+
+			return reply.redirect(redirectUrl.toString());
+		}
+	);
+
 	fastify.get(
 		'/auth/@me',
 		{
 			schema: {
-				tags: ['Better Auth'],
-				summary: 'Get current authenticated session',
-				security: [{ bearerAuth: [] }],
+				tags: ['Autenticação'],
+				summary: 'Obter sessão autenticada atual',
 				response: {
-					200: {
-						description: 'Current session returned by Better Auth.',
-						type: 'object',
-						additionalProperties: true,
-					},
-					401: {
-						description: 'No active authenticated session.',
-						type: 'object',
-						properties: {
-							error: { type: 'string' },
-						},
-						required: ['error'],
-					},
+					200: z.looseObject({}),
+					401: z.object({
+						error: z.string(),
+					}),
 				},
 			},
 		},
 		async (request, reply) => {
-			const session = await auth.api.getSession({
+			const session: AuthSession | null = await auth.api.getSession({
 				headers: fromNodeHeaders(request.headers),
 			});
 
@@ -39,38 +57,20 @@ const authRoutes: FastifyPluginAsync = async fastify => {
 	);
 
 	fastify.route({
-		method: ['GET', 'POST', "OPTIONS"],
+		method: ['GET', 'POST'],
 		url: '/auth/*',
 		schema: {
-			tags: ['Better Auth'],
-			summary: 'Handle Better Auth endpoints',
-			description:
-				'Delegates Better Auth routes such as sign-in, sign-up, OAuth callbacks, session, and sign-out to the Better Auth handler.',
-			security: [{ bearerAuth: [] }],
+			hide: true,
 			response: {
-				200: {
-					description: 'Better Auth response.',
-				},
-				400: {
-					description: 'Invalid authentication request.',
-				},
-				401: {
-					description: 'Authentication is required or failed.',
-				},
-				500: {
-					description: 'Internal authentication error.',
-					type: 'object',
-					properties: {
-						error: { type: 'string' },
-						code: { type: 'string' },
-					},
-					required: ['error', 'code'],
-				},
+				200: z.any(),
+				400: z.any(),
+				401: z.any(),
+				500: z.any(),
 			},
 		},
 		async handler(request, reply) {
 			try {
-				const url = new URL(request.url, `http://${request.headers.host}`);
+				const url = new URL(request.url, env.API_PUBLIC_URL);
 
 				const headers = fromNodeHeaders(request.headers);
 

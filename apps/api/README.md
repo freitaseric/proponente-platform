@@ -11,9 +11,11 @@ servidor atual expoe um health check e as rotas iniciais de autenticacao.
 - pnpm
 - Docker e Docker Compose, para rodar o PostgreSQL local
 
-O `package.json` declara pnpm `^11.3.0` como package manager esperado.
+O workspace raiz declara pnpm `11.9.0` como package manager esperado.
 
 ## Instalacao
+
+Na raiz do monorepo:
 
 ```sh
 pnpm install
@@ -21,19 +23,32 @@ pnpm install
 
 ## Variaveis de Ambiente
 
-Crie um arquivo `.env` na raiz de `captaflow-api/`:
+Crie um arquivo `.env` na raiz de `apps/api/`:
 
 ```env
+NODE_ENV=development
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/captaflow
-CORS_ALLOWED_ORIGINS=http://localhost:3000
+WEB_PUBLIC_URL=http://localhost:5173
+API_PUBLIC_URL=http://localhost:3000
+CORS_ALLOWED_ORIGINS=http://localhost:5173
+GOOGLE_CLIENT_ID=local-google-client-id
+GOOGLE_CLIENT_SECRET=local-google-client-secret
 ```
 
 Variaveis usadas pela aplicacao:
 
 | Variavel | Obrigatoria | Descricao |
 | --- | --- | --- |
+| `NODE_ENV` | Nao | Ambiente da API. Use `production` no deploy. |
 | `DATABASE_URL` | Sim | URL de conexao com o PostgreSQL. |
-| `CORS_ALLOWED_ORIGINS` | Nao | Lista de origins permitidas, separadas por virgula. |
+| `WEB_PUBLIC_URL` | Sim em producao | URL publica do app web. Em desenvolvimento usa `http://localhost:5173` se ausente. |
+| `API_PUBLIC_URL` | Sim em producao | URL publica da API. Em desenvolvimento usa `http://localhost:3000` se ausente. |
+| `CORS_ALLOWED_ORIGINS` | Nao | Origins extras permitidas, separadas por virgula. `WEB_PUBLIC_URL` e `API_PUBLIC_URL` ja entram automaticamente. |
+| `GOOGLE_CLIENT_ID` | Sim | Client ID do provedor Google usado pelo Better Auth. |
+| `GOOGLE_CLIENT_SECRET` | Sim | Client secret do provedor Google usado pelo Better Auth. |
+
+Em producao, `WEB_PUBLIC_URL` e `API_PUBLIC_URL` nao podem ficar ausentes. A
+API falha na inicializacao em vez de assumir `localhost`.
 
 ## Banco de Dados
 
@@ -94,7 +109,7 @@ http://localhost:3000
 ## Estrutura
 
 ```txt
-captaflow-api/
+apps/api/
 |-- src/
 |   |-- app.ts
 |   |-- db/
@@ -133,4 +148,4 @@ O resultado da compilacao e gerado em `dist/`.
 
 ## Licenca
 
-Apache 2.0. Veja [../LICENSE](../LICENSE).
+Apache 2.0. Veja [../../LICENSE](../../LICENSE).
