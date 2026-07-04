@@ -1,0 +1,48 @@
+{
+	"name": "captaflow-desktop",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"typecheck": "tsc -b --pretty false",
+		"check": "pnpm run typecheck && pnpm run lint",
+		"lint": "biome lint",
+		"format": "biome format",
+		"preview": "vite preview",
+		"tauri": "tauri"
+	},
+	"packageManager": "pnpm@11.9.0",
+	"engines": {
+		"node": ">=22"
+	},
+	"dependencies": {
+		"@freitas-ds/react": "0.3.0",
+		"@tailwindcss/vite": "4.3.1",
+		"@tauri-apps/api": "2.11.1",
+		"@tauri-apps/plugin-dialog": "2.7.1",
+		"@tauri-apps/plugin-log": "2.8.0",
+		"@tauri-apps/plugin-opener": "2.5.4",
+		"@tauri-apps/plugin-updater": "2.10.1",
+		"@tauri-apps/plugin-window-state": "2.4.1",
+		"better-auth": "1.6.22",
+		"freitas-ds": "0.3.0",
+		"lucide-react": "1.22.0",
+		"react": "19.2.7",
+		"react-dom": "19.2.7",
+		"react-router": "8.0.1",
+		"tailwindcss": "4.3.1"
+	},
+	"devDependencies": {
+		"@captaflow/config": "workspace:*",
+		"@captaflow/contracts": "workspace:*",
+		"@biomejs/biome": "2.5.1",
+		"@tauri-apps/cli": "2.11.4",
+		"@types/react": "19.2.17",
+		"@types/react-dom": "19.2.3",
+		"@vitejs/plugin-react": "6.0.3",
+		"typescript": "6.0.3",
+		"vite": "8.1.0"
+	}
+}

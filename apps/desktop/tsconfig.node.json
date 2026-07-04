@@ -1,0 +1,7 @@
+{
+	"extends": "@captaflow/config/tsconfig/vite-config",
+	"compilerOptions": {
+		"outDir": "node_modules/.cache/tsconfig-node"
+	},
+	"include": ["vite.config.ts"]
+}
