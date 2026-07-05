@@ -119,7 +119,7 @@ function RouteComponent() {
 					<ValueCard
 						icon={Users}
 						title="Implantação guiada"
-						description="Ajuste o Captaflow ao seu fluxo real de captação, sem forçar a equipe a caber em uma ferramenta genérica."
+						description="Ajuste o Proponente Digital ao seu fluxo real de captação, sem forçar a equipe a caber em uma ferramenta genérica."
 					/>
 					<ValueCard
 						icon={ShieldCheck}

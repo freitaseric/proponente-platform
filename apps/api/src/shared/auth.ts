@@ -1,5 +1,5 @@
 import { drizzleAdapter } from '@better-auth/drizzle-adapter';
-import type { AuthSession } from '@captaflow/contracts/auth';
+import type { AuthSession } from '@proponente/contracts/auth';
 import { betterAuth } from 'better-auth/minimal';
 import { oneTimeToken, openAPI } from 'better-auth/plugins';
 import { db } from '../db/client.js';
@@ -30,7 +30,7 @@ export const auth = betterAuth({
 		usePlural: true,
 		schema,
 	}),
-	appName: 'Captaflow',
+	appName: 'Proponente Digital',
 	logger: console,
 	trustedOrigins: [
 		env.WEB_PUBLIC_URL,

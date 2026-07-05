@@ -17,7 +17,7 @@ function RouteComponent() {
 						Uma plataforma para profissionalizar a captação de recursos.
 					</h1>
 					<p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-						O Captaflow nasce para dar clareza operacional a organizações que
+						O Proponente Digital nasce para dar clareza operacional a organizações que
 						lidam com editais, propostas, prazos, execução financeira e
 						prestação de contas.
 					</p>
@@ -45,8 +45,8 @@ function RouteComponent() {
 				<InfoSection
 					id="sobre"
 					icon={Building2}
-					title="Sobre o Captaflow"
-					description="O Captaflow concentra o fluxo da captação em uma experiência de trabalho clara: oportunidades, propostas, projetos, recursos e comprovações conectados. A proposta é reduzir dependência de planilhas dispersas e criar uma memória operacional para equipes que precisam captar com consistência."
+					title="Sobre o Proponente Digital"
+					description="O Proponente Digital concentra o fluxo da captação em uma experiência de trabalho clara: oportunidades, propostas, projetos, recursos e comprovações conectados. A proposta é reduzir dependência de planilhas dispersas e criar uma memória operacional para equipes que precisam captar com consistência."
 				/>
 				<InfoSection
 					id="seguranca"

@@ -120,7 +120,7 @@ function RouteComponent() {
 		<div className="mx-auto flex min-h-screen max-w-6xl flex-row items-center justify-between gap-16 px-8">
 			<section className="flex max-w-xl flex-col items-start justify-center gap-8">
 				<div className="flex flex-col gap-2">
-					<h1 className="text-3xl font-bold">Entrar no CaptaFlow</h1>
+					<h1 className="text-3xl font-bold">Entrar no Proponente Digital</h1>
 					<p className="text-muted-foreground">
 						Acesse sua conta para continuar gerenciando seus projetos, propostas
 						e oportunidades.

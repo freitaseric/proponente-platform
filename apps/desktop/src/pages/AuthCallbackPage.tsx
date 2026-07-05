@@ -1,4 +1,4 @@
-import type { DesktopAuthCallbackQuery } from '@captaflow/contracts/auth';
+import type { DesktopAuthCallbackQuery } from '@proponente/contracts/auth';
 import { Alert, Button, Spinner } from '@freitas-ds/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate, useSearchParams } from 'react-router';

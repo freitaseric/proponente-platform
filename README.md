@@ -1,6 +1,6 @@
-# CaptaFlow Platform
+# Proponente Digital Platform
 
-Monorepo da plataforma CaptaFlow.
+Monorepo da plataforma Proponente Digital.
 
 ## Estrutura
 
@@ -8,10 +8,11 @@ Monorepo da plataforma CaptaFlow.
 .
 |-- apps/
 |   |-- api/
-|   `-- desktop/
+|   |-- desktop/
+|   `-- web/
 |-- packages/
 |   |-- config/
-|   `-- types/
+|   `-- contracts/
 |-- package.json
 |-- pnpm-workspace.yaml
 `-- turbo.json
@@ -54,8 +55,8 @@ apps do workspace.
 Para rodar apenas um app:
 
 ```sh
-pnpm --filter captaflow-api dev
-pnpm --filter captaflow-desktop dev
+pnpm --filter proponente-api dev
+pnpm --filter proponente-desktop dev
 ```
 
 ## Comandos
@@ -75,7 +76,7 @@ Crie o arquivo `.env` em `apps/api/`:
 
 ```env
 NODE_ENV=development
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/captaflow
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/proponente
 WEB_PUBLIC_URL=http://localhost:5173
 API_PUBLIC_URL=http://localhost:3000
 CORS_ALLOWED_ORIGINS=http://localhost:5173
@@ -93,6 +94,29 @@ Variaveis publicas de build:
 As variaveis `VITE_*` sao embutidas pelo Vite no momento do build. No bundle
 do Tauri elas nao sao lidas do ambiente do usuario final. Em build de producao,
 web e desktop falham se as URLs publicas obrigatorias nao estiverem definidas.
+
+## Releases Desktop
+
+O auto-update do Tauri e publicado pelo GitHub Actions, nao pela API. O workflow
+`.github/workflows/release-desktop.yml` compila o app, assina os artefatos,
+publica um GitHub Release em draft e envia o `latest.json` consumido pelo
+updater.
+
+Configure estes secrets/variables no GitHub antes de publicar:
+
+| Nome | Tipo | Descricao |
+| --- | --- | --- |
+| `TAURI_SIGNING_PRIVATE_KEY` | Secret | Chave privada do updater Tauri. |
+| `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` | Secret | Senha da chave, se existir. |
+| `VITE_API_BASE_URL` | Variable | URL publica da API usada no bundle desktop, como `https://api.proponentedigital.com.br`. |
+| `VITE_WEB_BASE_URL` | Variable | URL publica do app web usado no login desktop, como `https://proponentedigital.com.br`. |
+
+Para publicar, crie uma tag `desktop-vX.Y.Z` alinhada a versao em
+`apps/desktop/src-tauri/tauri.conf.json`. O app desktop consulta:
+
+```txt
+https://github.com/freitaseric/proponente-platform/releases/latest/download/latest.json
+```
 
 Suba o PostgreSQL local a partir de `apps/api/`:
 

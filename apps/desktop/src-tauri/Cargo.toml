@@ -1,12 +1,12 @@
 [package]
-name = "captaflow-desktop"
+name = "proponente-desktop"
 version = "0.1.0"
 description = "A Tauri App"
 authors = ["you"]
 edition = "2021"
 
 [lib]
-name = "captaflow_desktop_lib"
+name = "proponente_desktop_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

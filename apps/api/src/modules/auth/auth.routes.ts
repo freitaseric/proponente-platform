@@ -1,4 +1,4 @@
-import type { AuthSession } from '@captaflow/contracts/auth';
+import type { AuthSession } from '@proponente/contracts/auth';
 import { fromNodeHeaders } from 'better-auth/node';
 import type { FastifyPluginAsync } from 'fastify';
 import { z } from 'zod';

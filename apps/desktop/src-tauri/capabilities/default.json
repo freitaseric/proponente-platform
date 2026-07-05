@@ -1,7 +1,7 @@
 {
 	"$schema": "../gen/schemas/desktop-schema.json",
 	"identifier": "main-desktop-capability",
-	"description": "Permissions for the CaptaFlow main desktop window.",
+	"description": "Permissions for the Proponente Digital main desktop window.",
 	"windows": ["main"],
 	"permissions": [
 		"core:default",

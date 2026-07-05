@@ -146,7 +146,7 @@ const contentLinks = [
 ];
 
 const companyLinks = [
-	{ title: 'Sobre o Captaflow', icon: Info, href: '/sobre#sobre' },
+	{ title: 'Sobre o Proponente Digital', icon: Info, href: '/sobre#sobre' },
 	{ title: 'Segurança', icon: LockKeyhole, href: '/sobre#seguranca' },
 	{ title: 'Contato', icon: Mail, href: '/sobre#contato' },
 ];
@@ -164,7 +164,7 @@ export const AppHeader = () => {
 						className="size-14 rounded-full"
 					/>
 					<span className="text-3xl font-bold tracking-normal text-primary">
-						Captaflow
+						Proponente Digital
 					</span>
 				</Link>
 

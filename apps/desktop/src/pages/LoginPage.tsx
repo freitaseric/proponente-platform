@@ -41,14 +41,14 @@ export default function LoginPage() {
 						alt=""
 						className="size-10"
 					/>
-					<span className="text-xl font-semibold">CaptaFlow</span>
+					<span className="text-xl font-semibold">Proponente Digital</span>
 				</div>
 				<div className="max-w-xl">
 					<h1 className="text-4xl font-semibold tracking-normal">
 						Gestão de captação com autenticação segura no navegador.
 					</h1>
 					<p className="mt-4 text-base text-on-primary/80">
-						Use sua conta CaptaFlow ou Google no navegador do sistema e volte
+						Use sua conta Proponente Digital ou Google no navegador do sistema e volte
 						automaticamente para o aplicativo.
 					</p>
 				</div>
@@ -62,7 +62,7 @@ export default function LoginPage() {
 							alt=""
 							className="size-9"
 						/>
-						<span className="text-lg font-semibold">CaptaFlow</span>
+						<span className="text-lg font-semibold">Proponente Digital</span>
 					</div>
 
 					<h2 className="text-2xl font-semibold tracking-normal">Entrar</h2>

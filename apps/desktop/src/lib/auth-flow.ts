@@ -1,4 +1,4 @@
-export const DESKTOP_AUTH_STATE_KEY = 'captaflow.desktopAuthState';
+export const DESKTOP_AUTH_STATE_KEY = 'proponente.desktopAuthState';
 
 export function createDesktopAuthState() {
 	if (globalThis.crypto?.randomUUID) {

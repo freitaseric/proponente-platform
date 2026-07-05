@@ -26,6 +26,7 @@ pids/
 *.pid
 *.seed
 *.pid.lock
+apps/api/storage/
 
 # Package manager caches
 .pnpm-store/

@@ -1,5 +1,5 @@
 {
-	"name": "captaflow-desktop",
+	"name": "proponente-desktop",
 	"private": true,
 	"version": "0.1.0",
 	"type": "module",
@@ -35,8 +35,8 @@
 		"tailwindcss": "4.3.1"
 	},
 	"devDependencies": {
-		"@captaflow/config": "workspace:*",
-		"@captaflow/contracts": "workspace:*",
+		"@proponente/config": "workspace:*",
+		"@proponente/contracts": "workspace:*",
 		"@biomejs/biome": "2.5.1",
 		"@tauri-apps/cli": "2.11.4",
 		"@types/react": "19.2.17",

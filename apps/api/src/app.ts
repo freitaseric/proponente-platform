@@ -1,6 +1,4 @@
-import path from 'node:path';
 import fastifyCors from '@fastify/cors';
-import fastifyStatic from '@fastify/static';
 import fastifySwagger, { type SwaggerTransformObject } from '@fastify/swagger';
 import fastifySwaggerUi from '@fastify/swagger-ui';
 import Fastify from 'fastify';
@@ -11,7 +9,6 @@ import {
 } from 'fastify-type-provider-zod';
 import { z } from 'zod';
 import authRoutes from './modules/auth/auth.routes.js';
-import updaterRoutes from './modules/updater/updater.routes.js';
 import { auth } from './shared/auth.js';
 import { env } from './shared/env.js';
 
@@ -184,12 +181,6 @@ fastify.register(fastifyCors, {
 	maxAge: 86400,
 });
 
-fastify.register(fastifyStatic, {
-	root: path.resolve(process.cwd(), 'storage/releases'),
-	prefix: '/downloads',
-	decorateReply: false,
-});
-
 if (isDevelopment) {
 	fastify.register(fastifySwagger, {
 		transform: jsonSchemaTransform,
@@ -213,8 +204,8 @@ if (isDevelopment) {
 		},
 		openapi: {
 			info: {
-				title: 'Captaflow API',
-				description: 'HTTP API documentation for Captaflow.',
+				title: 'Proponente Digital API',
+				description: 'HTTP API documentation for Proponente Digital.',
 				version: '1.0.0',
 			},
 			tags: [
@@ -253,7 +244,6 @@ fastify.get(
 );
 
 fastify.register(authRoutes);
-fastify.register(updaterRoutes);
 
 if (isDevelopment) {
 	fastify.get('/docs/combined-json', async (_, reply) => {

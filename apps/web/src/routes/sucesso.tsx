@@ -22,7 +22,7 @@ export const Route = createFileRoute('/sucesso')({
 function RouteComponent() {
 	const { state, token } = Route.useSearch();
 	const deepLink = useMemo(() => {
-		const url = new URL('captaflow://auth/callback');
+		const url = new URL('proponente://auth/callback');
 		url.searchParams.set('token', token);
 
 		if (state) {
@@ -57,7 +57,7 @@ function RouteComponent() {
 						size="lg"
 						asChild>
 						<a href={deepLink}>
-							<span className="text-xl">Abrir o Captaflow</span>
+							<span className="text-xl">Abrir o Proponente Digital</span>
 							<ExternalLink className="size-6" />
 						</a>
 					</Button>

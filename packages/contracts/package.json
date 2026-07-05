@@ -1,5 +1,5 @@
 {
-	"name": "@captaflow/contracts",
+	"name": "@proponente/contracts",
 	"private": true,
 	"version": "0.1.0",
 	"type": "module",
@@ -23,6 +23,6 @@
 		"check": "pnpm run typecheck && pnpm run lint"
 	},
 	"devDependencies": {
-		"@captaflow/config": "workspace:*"
+		"@proponente/config": "workspace:*"
 	}
 }

@@ -35,7 +35,7 @@ export type DesktopAuthCallbackQuery = {
 	state?: string;
 };
 
-export type DesktopAuthCallbackUrl = `captaflow://auth/callback?${string}`;
+export type DesktopAuthCallbackUrl = `proponente://auth/callback?${string}`;
 
 export type DesktopAuthStartQuery = {
 	source?: 'desktop';

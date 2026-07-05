@@ -1,5 +1,5 @@
 {
-	"extends": "@captaflow/config/tsconfig/vite-react",
+	"extends": "@proponente/config/tsconfig/vite-react",
 	"compilerOptions": {
 		"paths": {
 			"@/*": ["./src/*"]

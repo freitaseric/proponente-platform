@@ -67,11 +67,11 @@ pub fn run() {
                 let app_handle = app.handle().clone();
 
                 #[cfg(debug_assertions)]
-                app.deep_link().register("captaflow")?;
+                app.deep_link().register("proponente")?;
 
                 app.deep_link().on_open_url(move |event| {
                     for url in event.urls() {
-                        if url.scheme() == "captaflow" && url.host_str() == Some("auth") {
+                        if url.scheme() == "proponente" && url.host_str() == Some("auth") {
                             open_auth_callback(&app_handle, url.as_str());
                         }
                     }

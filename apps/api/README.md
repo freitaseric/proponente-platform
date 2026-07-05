@@ -1,6 +1,6 @@
-# CaptaFlow API
+# Proponente Digital API
 
-API backend do CaptaFlow.
+API backend do Proponente Digital.
 
 Esta API usa Fastify, TypeScript, Better Auth, Drizzle ORM e PostgreSQL. O
 servidor atual expoe um health check e as rotas iniciais de autenticacao.
@@ -27,7 +27,7 @@ Crie um arquivo `.env` na raiz de `apps/api/`:
 
 ```env
 NODE_ENV=development
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/captaflow
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/proponente
 WEB_PUBLIC_URL=http://localhost:5173
 API_PUBLIC_URL=http://localhost:3000
 CORS_ALLOWED_ORIGINS=http://localhost:5173
@@ -64,7 +64,7 @@ Configuracao do container:
 | --- | --- |
 | Usuario | `postgres` |
 | Senha | `postgres` |
-| Banco | `captaflow` |
+| Banco | `proponente` |
 | Porta | `5432` |
 
 As migrations do Drizzle ficam em `drizzle/`, e o schema fica em

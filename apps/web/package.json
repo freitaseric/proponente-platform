@@ -1,5 +1,5 @@
 {
-	"name": "captaflow-web",
+	"name": "proponente-web",
 	"private": true,
 	"version": "0.1.0",
 	"type": "module",
@@ -43,7 +43,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.1",
-		"@captaflow/config": "workspace:*",
+		"@proponente/config": "workspace:*",
 		"@tanstack/react-router-devtools": "^1.167.0",
 		"@types/react": "19.2.17",
 		"@types/react-dom": "19.2.3",

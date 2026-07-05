@@ -28,7 +28,7 @@ export function AppSidebar() {
 		<Sidebar>
 			<SidebarHeader>
 				<SidebarBrand
-					title="CaptaFlow"
+					title="Proponente Digital"
 					icon={
 						<img
 							src="/icon.ico"

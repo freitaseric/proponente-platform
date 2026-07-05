@@ -1,5 +1,5 @@
 {
-	"extends": "@captaflow/config/tsconfig/library",
+	"extends": "@proponente/config/tsconfig/library",
 	"compilerOptions": {
 		"rootDir": "src",
 		"outDir": "dist"

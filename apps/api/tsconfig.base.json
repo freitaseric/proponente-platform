@@ -1,3 +1,3 @@
 {
-	"extends": "@captaflow/config/tsconfig/node"
+	"extends": "@proponente/config/tsconfig/node"
 }

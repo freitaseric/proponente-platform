@@ -1,5 +1,5 @@
 {
-	"extends": "@captaflow/config/tsconfig/vite-config",
+	"extends": "@proponente/config/tsconfig/vite-config",
 	"compilerOptions": {
 		"outDir": "node_modules/.cache/tsconfig-node",
 		"moduleResolution": "bundler",

@@ -183,14 +183,14 @@ function HeroSection() {
 			<div className="mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-376 scroll-mt-28 items-center gap-12 px-6 py-12 lg:grid-cols-[0.88fr_1.12fr] lg:px-8 lg:py-16">
 				<div className="max-w-2xl">
 					<p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-						Captaflow
+						Proponente Digital
 					</p>
 					<h1 className="mt-5 text-4xl font-bold tracking-normal text-foreground md:text-6xl">
 						Da oportunidade ao recurso recebido.
 					</h1>
 					<p className="mt-6 text-lg leading-8 text-muted-foreground">
 						Organize editais, propostas, prazos e recursos captados em um só
-						fluxo. O Captaflow dá clareza para equipes que precisam captar mais
+						fluxo. O Proponente Digital dá clareza para equipes que precisam captar mais
 						e prestar contas melhor.
 					</p>
 
@@ -264,7 +264,7 @@ function SolutionsSection() {
 			<SectionHeader
 				eyebrow="Soluções"
 				title="Todo o ciclo da captação em uma operação só"
-				description="O Captaflow organiza problemas reais de quem capta recursos: encontrar oportunidades, priorizar projetos, cumprir prazos e comprovar execução."
+				description="O Proponente Digital organiza problemas reais de quem capta recursos: encontrar oportunidades, priorizar projetos, cumprir prazos e comprovar execução."
 				center
 			/>
 			<div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
@@ -362,7 +362,7 @@ function AudienceSection() {
 				<SectionHeader
 					eyebrow="Para quem é"
 					title="Feito para quem precisa prestar contas do resultado"
-					description="O Captaflow fala com equipes que vivem entre oportunidade, execução e responsabilidade pública ou institucional."
+					description="O Proponente Digital fala com equipes que vivem entre oportunidade, execução e responsabilidade pública ou institucional."
 					center
 				/>
 				<div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
@@ -389,7 +389,7 @@ function DemoSection() {
 						Demonstração
 					</p>
 					<h2 className="mt-4 max-w-3xl text-3xl font-bold tracking-normal md:text-4xl">
-						Veja como o Captaflow organiza sua captação antes do próximo edital.
+						Veja como o Proponente Digital organiza sua captação antes do próximo edital.
 					</h2>
 					<p className="mt-4 max-w-2xl text-sm leading-6 text-primary-foreground/80">
 						Conte sobre sua operação e receba uma demonstração guiada com os
@@ -403,7 +403,7 @@ function DemoSection() {
 						Entrar
 					</Link>
 					<a
-						href="mailto:contato@captaflow.com.br?subject=Demonstra%C3%A7%C3%A3o%20Captaflow"
+						href="mailto:contato@proponentedigital.com.br?subject=Demonstra%C3%A7%C3%A3o%20Proponente%20Digital"
 						className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-primary">
 						Solicitar demonstração
 						<ArrowRight className="size-4" />

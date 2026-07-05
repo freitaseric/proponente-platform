@@ -1,5 +1,5 @@
 import { Kbd, Topbar, UserMenu } from '@freitas-ds/react';
-import type { AuthUser } from '@captaflow/contracts/auth';
+import type { AuthUser } from '@proponente/contracts/auth';
 import { LogOut, Search, Settings, UserIcon } from 'lucide-react';
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router';
