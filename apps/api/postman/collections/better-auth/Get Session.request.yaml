@@ -1,9 +1,0 @@
-$kind: http-request
-name: Get Session
-description: Get the user details using the session Id in the authorization header tag and the user id in the url path parameter.
-url: http://localhost:3000/auth/@me
-method: GET
-headers:
-  Authorization: 62c70df8f5e60bff61f73af0
-  Origin: http://localhost:8080
-order: 4000

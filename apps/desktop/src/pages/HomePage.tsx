@@ -1,9 +1,7 @@
-import { AppShellContent } from '@freitas-ds/react';
-
 export default function HomePage() {
 	return (
-		<AppShellContent>
+		<div>
 			<h1>Hello world</h1>
-		</AppShellContent>
+		</div>
 	);
 }

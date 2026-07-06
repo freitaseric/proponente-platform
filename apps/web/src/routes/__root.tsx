@@ -1,8 +1,8 @@
 import { createRootRoute } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import { Toaster } from '@proponente/ui/sonner';
 import type React from 'react';
 import { AppHeader } from '#components/AppHeader';
-import { Toaster } from '#components/ui/sonner';
 
 export const Route = createRootRoute({
 	shellComponent: RouteComponent,

@@ -1,8 +1,0 @@
-$kind: http-request
-name: Sign Out
-description: Logout and destroy the session using the session ID received at Login.
-url: http://localhost:3000/auth/sign-out
-method: POST
-headers:
-  Origin: http://localhost:8080
-order: 2000

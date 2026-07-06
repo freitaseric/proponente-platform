@@ -1,4 +1,13 @@
 import { Link } from '@tanstack/react-router';
+import { Button } from '@proponente/ui/button';
+import {
+	NavigationMenu,
+	NavigationMenuContent,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+} from '@proponente/ui/navigation-menu';
 import {
 	BadgeCheck,
 	BellRing,
@@ -20,15 +29,6 @@ import {
 	Search,
 	Users,
 } from 'lucide-react';
-import { Button } from './ui/button';
-import {
-	NavigationMenu,
-	NavigationMenuContent,
-	NavigationMenuItem,
-	NavigationMenuLink,
-	NavigationMenuList,
-	NavigationMenuTrigger,
-} from './ui/navigation-menu';
 
 const solutions = [
 	{

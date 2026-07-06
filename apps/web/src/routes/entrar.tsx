@@ -1,4 +1,17 @@
 import { createFileRoute, Link, redirect } from '@tanstack/react-router';
+import { Button } from '@proponente/ui/button';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@proponente/ui/card';
+import { Checkbox } from '@proponente/ui/checkbox';
+import { Input } from '@proponente/ui/input';
+import { Label } from '@proponente/ui/label';
+import { Separator } from '@proponente/ui/separator';
 import {
 	ChartLine,
 	Eye,
@@ -11,19 +24,6 @@ import {
 import { useState } from 'react';
 import { toast } from 'sonner';
 import z from 'zod';
-import { Button } from '#components/ui/button';
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from '#components/ui/card';
-import { Checkbox } from '#components/ui/checkbox';
-import { Input } from '#components/ui/input';
-import { Label } from '#components/ui/label';
-import { Separator } from '#components/ui/separator';
 import { authClient } from '#lib/authClient';
 import constants from '#lib/constants';
 import {

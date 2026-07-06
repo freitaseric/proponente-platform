@@ -1,47 +1,42 @@
 import './index.css';
-import { FreitasProvider } from '@freitas-ds/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter, Route, Routes } from 'react-router';
-import {
-	RedirectAuthenticated,
-	RequireSession,
-} from '@/components/SessionGate';
+import { GuestRoute, ProtectedRoute } from '@/components/SessionGate';
+import AuthenticatedLayout from '@/layouts/AuthenticatedLayout';
 import MainLayout from '@/layouts/MainLayout';
 import AuthCallbackPage from '@/pages/AuthCallbackPage';
 import HomePage from '@/pages/HomePage';
 import LoginPage from '@/pages/LoginPage';
+import { ThemeProvider } from './components/ThemeProvider';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<FreitasProvider theme={{ seed: '#0F766E' }}>
+		<ThemeProvider>
 			<HashRouter>
 				<Routes>
-					<Route
-						path="/login"
-						element={
-							<RedirectAuthenticated>
-								<LoginPage />
-							</RedirectAuthenticated>
-						}
-					/>
-					<Route
-						path="/auth/callback"
-						element={<AuthCallbackPage />}
-					/>
-					<Route
-						element={
-							<RequireSession>
-								<MainLayout />
-							</RequireSession>
-						}>
+					<Route element={<MainLayout />}>
+						<Route element={<GuestRoute />}>
+							<Route
+								path="/login"
+								element={<LoginPage />}
+							/>
+						</Route>
 						<Route
-							index
-							element={<HomePage />}
+							path="/auth/callback"
+							element={<AuthCallbackPage />}
 						/>
+					</Route>
+					<Route element={<ProtectedRoute />}>
+						<Route element={<AuthenticatedLayout />}>
+							<Route
+								index
+								element={<HomePage />}
+							/>
+						</Route>
 					</Route>
 				</Routes>
 			</HashRouter>
-		</FreitasProvider>
+		</ThemeProvider>
 	</React.StrictMode>
 );

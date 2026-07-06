@@ -1,5 +1,0 @@
-workspace:
-  id: 0d1a557a-fd17-4de4-bc74-1b78159a9974
-cloudResources:
-  collections:
-    ../postman/collections/better-auth: 56236859-79d74c53-ffb1-4488-bca4-a41518b96e6b

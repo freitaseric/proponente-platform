@@ -1,0 +1,4 @@
+{
+	"extends": "@proponente/config/tsconfig/vite-react",
+	"include": ["src"]
+}

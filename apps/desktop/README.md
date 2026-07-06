@@ -17,6 +17,16 @@ o app nao consulta variaveis do ambiente do usuario final para trocar URLs.
 Em producao, `VITE_API_BASE_URL` e `VITE_WEB_BASE_URL` sao obrigatorias. O build
 falha cedo se alguma delas estiver ausente ou nao for uma URL absoluta valida.
 
+Para testes visuais locais que nao precisam da API nem do login, habilite:
+
+```env
+VITE_MOCK_SESSION=true
+```
+
+Esse modo libera as rotas autenticadas com uma sessao mockada apenas no ambiente
+Vite em desenvolvimento. Se precisar gerar um build de teste com o bypass ativo,
+defina tambem `VITE_ALLOW_MOCK_SESSION_IN_PRODUCTION=true`.
+
 ## Updates
 
 O updater consulta o `latest.json` publicado no GitHub Release mais recente:

@@ -1,5 +1,4 @@
 import type { DesktopAuthCallbackQuery } from '@proponente/contracts/auth';
-import { Alert, Button, Spinner } from '@freitas-ds/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate, useSearchParams } from 'react-router';
 import { authClient } from '@/lib/auth-client';
@@ -12,7 +11,7 @@ export default function AuthCallbackPage() {
 	const [searchParams] = useSearchParams();
 	const { refetch } = authClient.useSession();
 	const [status, setStatus] = useState<CallbackStatus>('pending');
-	const [message, setMessage] = useState<string | null>(null);
+	const [_message, setMessage] = useState<string | null>(null);
 	const hasStartedVerification = useRef(false);
 
 	const callbackQuery: DesktopAuthCallbackQuery = useMemo(
@@ -93,9 +92,7 @@ export default function AuthCallbackPage() {
 			<div className="w-full max-w-sm">
 				{status === 'pending' ? (
 					<div className="flex flex-col items-center text-center">
-						<Spinner
-							size="lg"
-							tone="primary"
+						<div
 						/>
 						<h1 className="mt-6 text-xl font-semibold tracking-normal">
 							Concluindo autenticação
@@ -106,18 +103,14 @@ export default function AuthCallbackPage() {
 					</div>
 				) : (
 					<>
-						<Alert
-							tone="danger"
-							title="Login não concluído"
-							description={message ?? undefined}
+						<div
 						/>
-						<Button
+						<button
 							type="button"
 							className="mt-6"
-							fullWidth
 							onClick={() => navigate('/login', { replace: true })}>
 							Voltar ao login
-						</Button>
+						</button>
 					</>
 				)}
 			</div>

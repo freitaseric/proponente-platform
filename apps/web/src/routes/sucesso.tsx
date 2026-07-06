@@ -1,15 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { CheckCircle, ExternalLink } from 'lucide-react';
-import { useEffect, useMemo } from 'react';
-import { z } from 'zod';
-import { Button } from '#components/ui/button';
+import { Button } from '@proponente/ui/button';
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from '#components/ui/card';
+} from '@proponente/ui/card';
+import { CheckCircle, ExternalLink } from 'lucide-react';
+import { useEffect, useMemo } from 'react';
+import { z } from 'zod';
 
 export const Route = createFileRoute('/sucesso')({
 	validateSearch: z.object({

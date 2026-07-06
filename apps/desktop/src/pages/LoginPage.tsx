@@ -1,4 +1,4 @@
-import { Alert, Button } from '@freitas-ds/react';
+
 import { openUrl } from '@tauri-apps/plugin-opener';
 import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';
@@ -10,7 +10,7 @@ import constants from '@/lib/constants';
 
 export default function LoginPage() {
 	const [error, setError] = useState<string | null>(null);
-	const [isOpening, setIsOpening] = useState(false);
+	const [_isOpening, setIsOpening] = useState(false);
 
 	async function handleOpenLogin() {
 		setError(null);
@@ -72,23 +72,18 @@ export default function LoginPage() {
 					</p>
 
 					{error ? (
-						<Alert
+						<div
 							className="mt-6"
-							tone="danger"
-							title="Falha ao abrir login"
-							description={error}
 						/>
 					) : null}
 
-					<Button
+					<button
 						type="button"
 						className="mt-8"
-						fullWidth
-						loading={isOpening}
 						onClick={handleOpenLogin}>
 						<ExternalLink className="size-4" />
 						Entrar pelo navegador
-					</Button>
+					</button>
 				</div>
 			</section>
 		</main>
