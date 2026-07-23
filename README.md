@@ -1,3 +1,11 @@
+<p align="center">
+  <img
+    src=".github/proponente-digital-cover.png"
+    alt="Proponente Digital — Gestão de editais, documentos e propostas"
+    width="100%"
+  />
+</p>
+
 # Proponente Digital
 
 Plataforma multiplataforma para gestão de editais, documentos e propostas de organizações sociais e captadores de recursos.
