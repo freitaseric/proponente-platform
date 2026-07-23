@@ -1,6 +1,53 @@
-# Proponente Digital Platform
+# Proponente Digital
 
-Monorepo da plataforma Proponente Digital.
+Plataforma multiplataforma para gestão de editais, documentos e propostas de organizações sociais e captadores de recursos.
+
+> [!WARNING]
+> Projeto em desenvolvimento.
+
+## Visão geral
+
+O Proponente Digital está sendo desenvolvido para centralizar informações que normalmente ficam distribuídas entre planilhas, documentos, mensagens e diferentes plataformas de inscrição.
+
+A plataforma busca apoiar associações, organizações sociais e profissionais de captação de recursos durante todo o ciclo de uma proposta: identificação da oportunidade, organização documental, elaboração do projeto, acompanhamento de prazos e registro do resultado.
+
+## Problema
+
+Organizações sociais e captadores frequentemente precisam administrar simultaneamente:
+
+- documentos institucionais com diferentes prazos de validade;
+- oportunidades publicadas em diversas plataformas;
+- propostas em diferentes etapas de elaboração;
+- requisitos, anexos e prazos específicos para cada edital;
+- informações de várias organizações atendidas;
+- histórico de submissões, aprovações e reprovações.
+
+Quando esse processo depende apenas de planilhas, pastas e mensagens, aumenta o risco de perda de informações, documentos vencidos e oportunidades não aproveitadas.
+
+## Solução proposta
+
+O Proponente Digital reúne esses processos em um único ambiente, permitindo:
+
+- cadastrar e organizar organizações;
+- centralizar documentos institucionais;
+- registrar editais e oportunidades;
+- acompanhar prazos e etapas das propostas;
+- compartilhar informações entre aplicações web e desktop;
+- manter contratos e regras de negócio tipados entre os diferentes componentes da plataforma.
+
+## Estado atual
+
+O projeto já possui:
+
+- API HTTP com autenticação e persistência em PostgreSQL;
+- aplicação web para cadastro, autenticação e integração com o desktop;
+- aplicação desktop construída com Tauri;
+- autenticação integrada entre navegador e aplicativo desktop;
+- sistema de atualização automática do aplicativo;
+- contratos compartilhados entre as aplicações;
+- automação de build e publicação de releases pelo GitHub Actions.
+
+As funcionalidades de gestão de organizações, documentos, oportunidades e propostas continuam em desenvolvimento.
 
 ## Estrutura
 
