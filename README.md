@@ -2,7 +2,7 @@
 
 Plataforma multiplataforma para gestão de editais, documentos e propostas de organizações sociais e captadores de recursos.
 
-> [!WARNING]
+> [!NOTE]
 > Projeto em desenvolvimento.
 
 ## Visão geral
