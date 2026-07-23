@@ -11,7 +11,7 @@
 Plataforma multiplataforma para gestão de editais, documentos e propostas de organizações sociais e captadores de recursos.
 
 > [!NOTE]
-> Projeto em desenvolvimento.
+> O desenvolvimento está temporariamente pausado enquanto o foco está direcionado a outro produto. O projeto será retomado com uma estratégia open core, mantendo um núcleo público e oferecendo recursos comerciais adicionais.
 
 ## Visão geral
 
@@ -180,6 +180,17 @@ docker compose up -d
 ```
 
 Mais detalhes em [apps/api/README.md](apps/api/README.md).
+
+## Direção do projeto
+
+O Proponente Digital deverá evoluir sob um modelo open core:
+
+- uma edição comunitária com código-fonte público;
+- funcionalidades essenciais de gestão disponíveis na versão aberta;
+- recursos avançados, serviços gerenciados e funcionalidades voltadas a operações maiores na oferta comercial;
+- desenvolvimento público e transparente do núcleo compartilhado.
+
+A divisão definitiva entre os recursos comunitários e comerciais ainda será definida antes da retomada do desenvolvimento.
 
 ## Licenca
 
